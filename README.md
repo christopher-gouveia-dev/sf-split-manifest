@@ -11,20 +11,28 @@ Génère, segmente et retrieve des métadonnées Salesforce depuis une org.
 
 ---
 
+## Installation
+
+Copier les fichiers dans un dossier sf-split-manifest/ (nom peut être changé) dans scripts/, dossier auto-généré avec le projet SFDX.
+
+---
+
 ## Utilisation avec Powershell/Git Bash
+
+Commandes à exécuter avec Powershell/Git Bash, si le nom du dossier du script est sf-split-manifest/ (sinon adapter) :
 
 ```powershell
 # 1. Générer les manifests uniquement (pas de retrieve)
-python scripts/split_manifest -o monAlias
+python scripts/sf-split-manifest -o monAlias
 
 # 2. Générer + retriever TOUT
-python scripts/split_manifest -o monAlias -r
+python scripts/sf-split-manifest -o monAlias -r
 
 # 3. Générer + retriever uniquement les types search-priority (recommandé)
-python scripts/split_manifest -o monAlias -r -s
+python scripts/sf-split-manifest -o monAlias -r -s
 
 # 4. Idem, avec 4 retrieves en parallèle
-python scripts/split_manifest -o monAlias -r -s -p 4
+python scripts/sf-split-manifest -o monAlias -r -s -p 4
 ```
 
 ### Options principales
